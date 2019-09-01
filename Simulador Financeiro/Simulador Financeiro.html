@@ -7,29 +7,29 @@
     <title>Simulador Financeiro</title>
 </style>
 </head>
-<body>
-        <h1> <span style="background-color: black; color: yellow; width: 17%; padding: 5px">Blind</span><span style="color:black ; 
-        font-size: 50px">Market</span></h1>
+<body style="margin: 5px 45px 0px 45px">
+    <center>
+    <img style="width: 350px;" src="Logo-BlaindMarket.png">
         <h2 >Simulador Financeiro</h2>
         
-        <div style="font-size: 115%">
+        <div style="font-size: 115%; text-align: justify">
         De acordo com o senso do IBGE mais recente (2010), o Brasil tem em torno de 528.624 pessoas completamente cegas. <br>
         Nosso sistema, apesar de tudo, trabalha com 0.25% desses prospects, apenas para passar uma noção para os usuários. <br>
         Desta forma, 
         temos uma margem de erro muito grande, podendo assim mostrar com conforto altos números de lucro adicionais para cada usuário em potencial
         com deficiencia visual. <br><br>
         </div>
-
-        <span style="font-size: 20px">Digite seu lucro mensal <input type="text" id="lucro_mensal"autofocus><br><br>
-        Digite quantos clientes seu mercado recebe por mês <input type="text" id="clientes_mensais"><br><br>
+    </center>
+        <span style="font-size: 20px">Digite seu lucro mensal: <input type="text" id="lucro_mensal"autofocus><br><br>
+        Digite quantos clientes seu mercado recebe por mês: <input type="text" id="clientes_mensais"><br><br>
         </span>
         
         <button onclick="calculo()">VEJA!</button><br><br>
     
-        <div id="mensagem1" style="display: none; color:black"></div>
-        <div id="mensagem2" style="display: none; color:black"></div>
-        <div id="mensagem3" style="display: none; color:black"></div>
-
+        <div id="mensagem1" style="display: none; font-size: 115%; color:black"></div>
+        <div id="mensagem2" style="display: none; font-size: 115%; color:black"></div>
+        <div id="mensagem3" style="display: none; font-size: 115%; color:black"></div>
+    
 </body>
 </html>
 <script>
@@ -37,7 +37,7 @@
         {
             var clientes_mensais_mais = clientes_mensais.value + 1321; 
             var clientes_anuais_mais = clientes_mensais_mais * 12;
-            var lucro_mensal_total = lucro_mensal.value + 264200;
+            var lucro_mensal_total = parseFloat(lucro_mensal.value + 2642.00);
 
             var frase = `Seu número atual de clientes é de ${clientes_mensais.value} clientes mensais e você teria em torno de 1321 clientes mensais a mais.`;
             mensagem1.innerHTML = frase;
@@ -47,8 +47,9 @@
             mensagem2.innerHTML = frase2;
             mensagem2.style.display = 'block';
 
-            var frase3 = `Suponhando que cada cliente gaste R$100,00 em uma compra e vá 2 vezes no mês ao mercado, teria o lucro de R$${lucro_mensal_total} mensal`;
+            var frase3 = `Suponhando que cada cliente gaste R$100,00 em uma compra e vá 2 vezes no mês ao mercado, teria o lucro de R$${lucro_mensal_total.toLocaleString('pt-BR')},00 mensal`;
             mensagem3.innerHTML = frase3;
             mensagem3.style.display = 'block';
+
         }
 </script>
