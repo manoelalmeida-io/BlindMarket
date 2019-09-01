@@ -1,0 +1,16 @@
+int sensor = 0;//Declarando variável do tipo inteiro e atribuido/armazenar o valor 0 nela
+void setup() {  
+  pinMode(7, INPUT);// Configura o pino 7 digital como entrada
+  Serial.begin(9600);//Inicia a porta serial, configura a taxa de dados para 9600 bps
+                    // Configura a taxa de transferência em bits por segundo.
+}
+
+void loop() {
+  sensor = digitalRead(7);// // Lendo o pino de entrada e  atrinuindo a variável 
+ 
+  if(sensor == 0)// Testando se o sensor detectar alguma coisa.
+  {
+     Serial.println("Produto:  X Preço: Y");//// Imprime dados na porta serial
+  }
+  delay(3000); // Pausa de 3000 em milissegundos/3 segundos
+}
