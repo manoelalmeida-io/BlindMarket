@@ -53,7 +53,7 @@
             mensagem2.innerHTML = frase2;
             mensagem2.style.display = 'block';
 
-            var frase3 = `Suponhando que cada cliente gaste R$100,00 em uma compra e vá 2 vezes no mês ao mercado, teria o lucro de R$${lucro_mensal_total.toLocaleString('pt-BR')},00 mensal`;
+            var frase3 = `Suponhando que cada cliente gaste R$100,00 em uma compra e vá 2 vezes no mês ao mercado, teria o lucro de R$${lucro_mensal_total.toLocaleString('pt-BR').toFixed(2)} mensal`;// O método toLocaleString() retorna uma string com uma representação sensível a linguagem deste número no caso pt-BR.
             mensagem3.innerHTML = frase3;
             mensagem3.style.display = 'block';
 
