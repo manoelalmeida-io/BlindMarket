@@ -14,7 +14,7 @@
         
         <div style="font-size: 115%; text-align: justify">
         De acordo com o senso do IBGE mais recente (2010), o Brasil tem em torno de 528.624 pessoas completamente cegas. <br>
-        Nosso sistema, apesar de tudo, trabalha com 0.25% desses prospects, apenas para passar uma noção para os usuários. <br>
+        Que corresponde a 3.75% da população Brasileira. <br>
         Desta forma, 
         temos uma margem de erro muito grande, podendo assim mostrar com conforto altos números de lucro adicionais para cada usuário em potencial
         com deficiencia visual. <br><br>
@@ -35,13 +35,19 @@
 <script>
         function calculo()
         {
-            var clientes_mensais_mais = clientes_mensais.value + 1321; 
+            // calcula o aumento de clientes mensais a mais (3.5% da população)
+            var clientes_mensais_mais = (clientes_mensais.value * 0.035).toFixed(0);
+            
+            // calcula o número de clientes anuais a mais multiplicando o número de cliente por 12 
             var clientes_anuais_mais = clientes_mensais_mais * 12;
-            var lucro_mensal_total = parseFloat(lucro_mensal.value + 2642.00);
 
-            var frase = `Seu número atual de clientes é de ${clientes_mensais.value} clientes mensais e você teria em torno de 1321 clientes mensais a mais.`;
-            mensagem1.innerHTML = frase;
-            mensagem1.style.display = 'block';
+            // calcula o lucro mensal que é o lucro anterior mais o gasto dos clientes mensais a mais
+            var lucro_mensal_total = parseFloat(Number(lucro_mensal.value) + Number(clientes_mensais_mais * 100 * 2));
+
+            // Mostra as frases
+            var frase = `Seu número atual de clientes é de ${clientes_mensais.value} clientes mensais e você teria em torno de ${clientes_mensais_mais} clientes mensais a mais.`;
+            mensagem1.innerHTML = frase; // colocando a frase dentro do div
+            mensagem1.style.display = 'block'; // deixando a div visível
 
             var frase2 = `Além disso, teria um total de ${clientes_anuais_mais} clientes anuais, caso estivesse utilizando nosso sistema`;
             mensagem2.innerHTML = frase2;
