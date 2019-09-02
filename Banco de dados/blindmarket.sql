@@ -11,7 +11,7 @@ create table produtos( -- criando a tabela "produtos"
 create table sensores( -- tabela para saber qual sensor foi ativado para poder vincular com o produto
 	idSensor int primary key auto_increment, -- coluna para pegar o id do sensor e ir incrementando a cada sensor cadastrado
 	portaSensor int not null, -- porta do sensor ativo
-    idProduto int not null -- relação com os produtos cadastrados
+	idProduto int not null -- relação com os produtos cadastrados
 );
 
 insert into produtos(nome, categoria, preco) values -- inserindo produtos
@@ -21,7 +21,7 @@ insert into produtos(nome, categoria, preco) values -- inserindo produtos
 ('Salagadinho fandangos', 'Salgadinhos', 5.00);
 
 select * from produtos ; -- consultado todos os dados da tabela
-select * from produtos where preco > 2; -- consultado a tabela onde os dados sejam somente com o preço a cima de 2
+select * from produtos where preco = 2.50; -- consultado a tabela onde os dados sejam somente com o preço a cima de 2
 
 
 
