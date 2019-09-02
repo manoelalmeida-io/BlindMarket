@@ -1,11 +1,11 @@
-﻿int sensor = 0;//Declarando variável do tipo inteiro e atribuido/armazenar o valor 0 nela
+int sensor;//Declarando variável do tipo inteiro 
 void setup() {  
   pinMode(7, INPUT);// Configura o pino 7 digital como entrada
   Serial.begin(9600);//// Inicia a porta serial, configura a taxa de dados para 9600 bps (baud é uma medida de velocidade)
 }
 
 void loop() {
-  sensor = digitalRead(7);// // Lendo o pino de entrada e  atrinuindo a variável 
+  sensor = digitalRead(7);// // Lendo o pino de entrada e  atribuido/armazenar a variável 
  
   if(sensor == 0)// Testando se o sensor detecta alguma coisa.
   {
