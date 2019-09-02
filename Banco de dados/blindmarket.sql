@@ -9,7 +9,9 @@ create table produtos( -- criando a tabela "produtos"
 );
 
 create table sensores( -- tabela para saber qual sensor foi ativado para poder vincular com o produto
-	idSensor int primary key auto_increment -- coluna para pegar o id do sensor e ir incrementando a cada sensor cadastrado
+	idSensor int primary key auto_increment, -- coluna para pegar o id do sensor e ir incrementando a cada sensor cadastrado
+	portaSensor int not null, -- porta do sensor ativo
+    idProduto int not null -- relação com os produtos cadastrados
 );
 
 insert into produtos(nome, categoria, preco) values -- inserindo produtos
