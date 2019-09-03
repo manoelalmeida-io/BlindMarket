@@ -21,7 +21,7 @@ insert into produtos(nome, categoria, preco) values -- inserindo produtos
 ('Salagadinho fandangos', 'Salgadinhos', 5.00);
 
 select * from produtos ; -- consultado todos os dados da tabela
-select * from produtos where preco = 2.50; -- consultado a tabela onde os dados sejam somente com o preço a cima de 2
+select * from produtos where preco > 2; -- consultado a tabela onde os dados sejam somente com o preço a cima de 2
 
 
 
