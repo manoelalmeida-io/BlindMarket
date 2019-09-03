@@ -10,6 +10,7 @@ void loop() {
   if(sensor == 0)// Testando se o sensor detecta alguma coisa.
   {
      Serial.println("Produto:  X Preço: Y");// Imprime dados na porta serial
+     delay(3000); // Pausa de 3000 em milissegundos/3 segundos
   }
-  delay(3000); // Pausa de 3000 em milissegundos/3 segundos
+  
 }
